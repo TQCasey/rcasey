@@ -2,6 +2,8 @@
 
 #![no_std] // 不链接 Rust 标准库
 #![no_main] // 禁用所有 Rust 层级的入口点
+#![feature(llvm_asm)]
+#![warn(deprecated)]
 
 use core::panic::PanicInfo;
 
@@ -20,7 +22,7 @@ pub extern "C" fn _start() -> ! {
     for (i, &byte) in HELLO.iter().enumerate() {
         unsafe {
             *vga_buffer.offset(i as isize * 2) = byte;
-            *vga_buffer.offset(i as isize * 2 + 1) = 0xb;
+            *vga_buffer.offset(i as isize * 2 + 1) = 0xc;
         }
     }
 
