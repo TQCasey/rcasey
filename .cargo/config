@@ -1,0 +1,5 @@
+# in .cargo/config
+
+[build]
+target = "rcasey.json"
+
