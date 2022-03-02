@@ -9,3 +9,4 @@ build-command = ["xbuild"]
 
 [dependencies]
 bootloader = "0.9.3"
+vga = {path = "vga"}
